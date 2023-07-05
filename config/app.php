@@ -212,4 +212,7 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    'region_provider_url' => env('BASE_URL_REGION_PROVIDER'),
+    'region_key' => env('KEY_REGION_PROVIDER'),
+
 ];
