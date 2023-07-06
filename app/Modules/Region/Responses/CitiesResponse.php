@@ -17,15 +17,15 @@ class CitiesResponse extends JsonResource
     if ($this->resource instanceof \Illuminate\Support\Collection) {
       return $this->resource->map(function($item){
         return [
-          'city_id' => $item->id,
-          'city_name' => $item->cityName,
+          'city_id' => $item->id ?? $item->city_id,
+          'city_name' => $item->cityName ?? $item->city_name,
         ];
       });
     }
 
     return [
-      'city_id' => $this->id,
-      'city_name' => $this->cityname,
+      'city_id' => $this->id ?? $this->city_id,
+      'city_name' => $this->cityName ?? $this->city_name,
     ];
   }
 }

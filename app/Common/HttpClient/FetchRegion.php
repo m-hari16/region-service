@@ -29,4 +29,16 @@ class FetchRegion
     return $data->object();
   }
 
+  public function searchProvinceById(int $id)
+  {
+    $data = $this->http->get('province?id='.$id);
+    return $data->object();
+  }
+
+  public function searchCityById(int $id)
+  {
+    $data = $this->http->get('city?id='.$id);
+    return $data->object();
+  }
+
 }

@@ -17,15 +17,15 @@ class ProvincesResponse extends JsonResource
     if ($this->resource instanceof \Illuminate\Support\Collection) {
       return $this->resource->map(function($item){
         return [
-          'province_id' => $item->id,
-          'province_name' => $item->provinceName,
+          'province_id' => $item->id ?? (int)$item->province_id,
+          'province_name' => $item->provinceName ?? $item->province,
         ];
       });
     }
 
     return [
-      'province_id' => $this->id,
-      'province_name' => $this->provinceName,
+      'province_id' => $this->id ?? (int)$this->province_id,
+      'province_name' => $this->provinceName ?? $this->province,
     ];
   }
 }
