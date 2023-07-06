@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +17,5 @@ Route::prefix('search')->group(function(){
     Route::get('/provinces', 'Region\Controllers\RegionController@getProvinces');
     Route::get('/cities', 'Region\Controllers\RegionController@getCities');
 });
+
+Route::post('/login', 'Auth\Controllers\LoginController@loginWithEmail');
