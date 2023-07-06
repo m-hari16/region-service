@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix('search')->group(function(){
+Route::prefix('search')->middleware('auth:sanctum')->group(function(){
     Route::get('/provinces', 'Region\Controllers\RegionController@getProvinces');
     Route::get('/cities', 'Region\Controllers\RegionController@getCities');
 });
