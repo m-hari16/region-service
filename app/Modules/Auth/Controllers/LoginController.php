@@ -31,7 +31,7 @@ class LoginController extends Controller
       "accessToken" => $attempt[1],
     ];
 
-    return response()->json(ResponseBuilder::build(201, true, 'Login successfully', $response));
+    return response()->json(ResponseBuilder::build(201, true, 'Login successfully', $response), 201);
 
   }
 }
